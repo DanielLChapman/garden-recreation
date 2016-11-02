@@ -1,0 +1,286 @@
+<html>
+  <head>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="TweenMax.min.js"></script>
+
+    <script src="
+https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>-->
+  </head>
+  <script>
+	// init controller
+	var controller = new ScrollMagic.Controller();
+  /*  (function() {
+    $(document).ready(function(){skrollr.init({ 
+      keyframe: function(element, name, direction) {
+        $(element).trigger(name, [direction]);
+      }});
+    });
+})();*/
+</script>
+  <body>
+    <div id="trigger" class="spacer s0"></div>
+    <div class="top-images parallax">
+      
+      <div class="layer-back"  id="background" data-smooth-scrolling="off" data-0="top:0px;" data-50="top:40px;">
+        <img class="layer-back" src="garden-temp-11-1-final_0007_Background.png" data-0="top:0px;" data-50="top:-100px;">
+      </div>
+      
+      <div class="layer-base" id="sun" data-0="top:0px;" data-50="top:-200px;">
+        <img class="layer-base" src="garden-temp-10-31-final_0005_Layer-3.png">
+      </div>
+      <div class="layer-base"  id="mountains" data-0="top:0px;" data-50="top:40px;">
+        <img class="layer-base" src="garden-temp-11-1-final_0005_Background-copy.png">
+      </div>
+
+      <div class="layer-base clouds" data-0="top:0px;" data-50="top:100px;" >
+        <img class="layer-base" src="garden-temp-10-31-final_0003_Layer-1.png">
+      </div>
+      <div class="layer-base clouds" data-0="top:0px;" data-50="top:100px;" >
+        <img class="layer-base" src="garden-temp-10-31-final_0002_Layer-2.png" >
+      </div>
+      <div class="layer-base branches" data-smooth-scrolling="off" data-0="top:0px;" data-50="top:-160px;">
+        <img class="layer-base" src="garden-temp-10-31-final_0001_Layer-4.png" >
+      </div>
+      <div class="layer-base branches" data-smooth-scrolling="off" data-0="top:0px;" data-50="top:-160px; padding-bottom: 5px; background: rgb(51,16,37)">
+        <img class="layer-base" src="garden-temp-10-31-final_0000_Layer-5.png"  >
+      </div>
+      <div class="layer-base" id="logo" data-smooth-scrolling="off" data-50="top:230px;">
+        <img class="layer-base" src="logo.png"  >
+      </div>
+      
+      
+      
+    </div>
+    <div class="nav-bar" >
+      <a href="#"><h3>Sample</h3></a>
+      <ul>
+        <li>The Studio</li>
+        <li>Portfolio</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="middle-content" >
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+       width="1000.000000pt" height="200.000000pt" viewBox="0 0 1000.000000 200.000000"
+       preserveAspectRatio="xMidYMid meet">
+      <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
+      fill="#000000" stroke="none">
+      <path class="cloud" d="M5034 1336 c-58 -27 -116 -83 -147 -141 -17 -32 -22 -58 -22 -127 l0
+      -88 -33 0 c-36 0 -92 -25 -92 -41 0 -26 -18 5 -24 40 -21 133 -208 182 -303
+      79 -43 -46 -57 -141 -29 -196 19 -36 65 -78 99 -91 19 -7 204 -11 544 -11 571
+      0 556 -2 588 66 42 89 -20 184 -120 184 l-35 0 0 53 c0 75 -25 139 -76 196
+      -65 72 -129 101 -223 101 -59 0 -88 -6 -127 -24z"/>
+      <path class="bar" d="M260 1005 l0 -85 1620 0 1620 0 0 85 0 85 -1620 0 -1620 0 0 -85z"/>
+      <path class="bar" d="M6500 1005 l0 -85 1620 0 1620 0 0 85 0 85 -1620 0 -1620 0 0 -85z"/>
+      </g>
+      </svg>
+
+    </div>
+  </body>
+  <style>
+    body, html {
+      width: 102%;
+      position: relative;
+      left: -1%;
+      height: 200%;
+      background: rgb(51,16,37);
+      overflow-x: hidden;
+    }
+    .parallax {
+      perspective: 1px;
+      z-index: 2;
+    }
+    #trigger2 {
+      position: fixed;
+      top: 50px;
+      z-index: 14;
+      width: 100%;
+    }
+    .top-images {
+      width: 100%;
+      background: rgb(51,16,37);
+      height: auto;
+      float: left;
+      
+    }
+    .top-images div {
+      width: 100%;
+      top: 0px;
+      position: relative;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: 1s;
+      background: rgb(51,16,37);
+    }
+    .top-images div img {
+      width: 100%;
+      transition: 1s;
+      position: absolute;
+      
+    }
+    .nav-bar, .middle-content {
+      width: 100%;
+      height: 75px;
+      position: relative;
+      float: left;
+      background: rgb(51,16,37);
+      margin: 0;
+      z-index:20;
+      border-bottom: 2px solid rgb(93,3,42);
+    }
+    .branches {
+      transition: 0.3s !important;
+    }
+    .nav-bar {
+       text-align: center;
+       z-index: 21;
+       width: 104%;
+       transition: .3s;
+    }
+    .nav-bar ul {
+      list-style: none;
+      display: inline-block;
+      position: relative;
+      left: -3%;
+    }
+    .nav-bar h3 {
+      display: inline-block;
+      float: left;
+      left: 50px;
+      top: -10px;
+      font-size: 25px;
+      color: rgb(252,248,200);
+      position: relative;
+    }
+    .nav-bar ul li {
+      display: inline-block;
+      color: rgb(252,248,200);
+      margin-right: 50px;
+      font-size: 25px;
+      text-align: center;
+      
+    }
+    .middle-content {
+      height: 1000px;
+      border-bottom: 0px solid white;
+      background: rgb(51,16,37);
+      padding-top: 250px;
+      top: 100vh;
+      transition: .3s;  
+    }
+    svg {
+      width: 95%;
+      left: 2%;
+      position: relative;
+    }
+    .cloud, .bar {
+      fill: rgb(226,26,82); 
+    }
+    #logo {
+      width: 250px;
+      margin: 0 auto;
+      top: 250px;
+    }
+    .top-bar {
+      position: fixed;
+      top: 0 !important;
+      z-index: 22;
+      width: 104%;
+    }
+    .branches {
+      transition: .3s;
+    }
+  </style>
+  
+  <script>
+   var tween7 = TweenMax.to(".middle-content", 0.5, {top:"-170px"});
+    var sceneMiddleContent = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 20, triggerHook: 'onLeave'})
+						.setTween(tween7)
+						.addTo(controller);
+    
+    /*var tween = TweenMax.to("#background", 0.5, {top:"80px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 1, triggerHook: 'onLeave'})
+						.setTween(tween)
+						.addTo(controller);*/
+    
+
+    var tween8 = TweenMax.to(".nav-bar", 0.5, {top:"-160px"});
+    var sceneNavBar = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 10, triggerHook: 'onLeave'})
+						.setTween(tween8)
+						.addTo(controller);
+ 
+    var tween3 = TweenMax.to(".clouds", 0.5, {top:"100px"});
+    var sceneClouds = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 100, triggerHook: 'onLeave'})
+						.setTween(tween3)
+						.addTo(controller);
+    
+    var tween4 = TweenMax.to("#mountains", 0.3, {top:"-150px"});
+    var sceneMountains = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 80, triggerHook: 'onLeave'})
+						.setTween(tween4)
+						.addTo(controller);
+
+    var tween2 = TweenMax.to(".branches", 1, {top:"-160px"});
+    var sceneBranches = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 80, triggerHook: 'onLeave'})
+						.setTween(tween2)
+						.addTo(controller);
+    
+    var tween5 = TweenMax.to("#sun", 0.5, {top:"-200px"});
+    var sceneSun = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 50, triggerHook: 'onLeave'})
+						.setTween(tween5)
+						.addTo(controller);
+      
+</script>
+  <script>
+    $(document).ready(function() {
+      $('.top-images').height($('.top-images div img').height());
+        
+      /*if ( window.innerHeight-$('.top-images div img').height()-76 >= 0) {
+        $('.nav-bar').css("margin-top", window.innerHeight-$('.top-images div img').height()-76+"px");
+        $('.nav-bar').attr("data-0", window.innerHeight-$('.top-images div img').height()-76+"px");
+      }else {
+        $('.nav-bar').css("top", -$('.top-images div img').height()+window.innerHeight-76+"px");
+        $('.nav-bar').attr("data-0", -$('.top-images div img').height()+window.innerHeight-76+"px");
+      }*/
+    });
+    $( window ).resize(function() {
+      $('.top-images').height($('.top-images div img').height());
+      distance = $('.top-images div img').height()-165;
+      /*if ( window.innerHeight-$('.top-images div img').height()-76 >= 0) {
+        $('.nav-bar').css("margin-top", window.innerHeight-$('.top-images div img').height()-76+"px");
+        $('.nav-bar').attr("data-0", window.innerHeight-$('.top-images div img').height()-76+"px");
+      }else {
+        $('.nav-bar').css("top", -$('.top-images div img').height()+window.innerHeight-76+"px");
+        $('.nav-bar').attr("data-0", -$('.top-images div img').height()+window.innerHeight-76+"px");
+      }*/
+    });
+    
+    
+    
+    var distance = $('.top-images div img').height()-165;
+    $window = $(window);
+    scrolled = false;
+    $window.scroll(function() {
+      scrolled=true;
+    });
+    setInterval(function() {
+      if (scrolled) {
+        scrolled=false;
+        if ($window.scrollTop() >= distance) {
+          $('.nav-bar').addClass("top-bar");
+        }
+        else {
+          $('.nav-bar').removeClass("top-bar");
+        }
+      }
+     }, 250);
+    
+  </script>
+</html>
