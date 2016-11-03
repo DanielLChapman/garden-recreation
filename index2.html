@@ -1,0 +1,163 @@
+<html>
+  <header>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="TweenMax.min.js"></script>
+
+    <script src="
+https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script>
+     var controller = new ScrollMagic.Controller();
+    </script>
+  </header>
+  <body>
+    <div id="trigger" class="spacer s0"></div>
+    <div class="parallax">
+      <div class="layer-back"  id="background">
+        <img class="layer-back-img" src="new-10-2_0007_Layer-1.png">
+      </div>
+      <div class="layer-back"  id="sun">
+          <img class="layer-back-img" src="new-10-2_0006_Layer-2.png">
+      </div>
+      <div class="layer-back"  id="mountain">
+          <img class="layer-back-img" src="new-10-2_0005_Layer-3.png">
+      </div>
+      <div class="layer-back cloud" >
+          <img class="layer-back-img" src="new-10-2_0004_Layer-4.png">
+      </div>
+      <div class="layer-back cloud" >
+          <img class="layer-back-img" src="new-10-2_0003_Layer-5.png">
+      </div>
+      <div class="layer-back cloud" >
+          <img class="layer-back-img" src="new-10-2_0002_Layer-6.png">
+      </div>
+      <div class="layer-back branches" >
+          <img class="layer-back-img" src="new-10-2_0001_Layer-7.png">
+      </div>
+      <div class="layer-back branches">
+          <img class="layer-back-img" src="new-10-2_0000_Layer-8.png">
+      </div>
+    </div>
+    
+    <div class="middle-content">
+    
+    </div>
+    <script>
+     $(document).ready(function() {
+       $('.parallax').height($(".layer-back-img").height());
+       $(".layer-back-img").css('transform', 'translateX(-' + 0 + 'px)');
+       var tempWidth = parseFloat($(".layer-back-img").width())-parseFloat($(window).width());
+       if (tempWidth >= 0) {
+        $(".layer-back-img").css('transform', 'translateX(-' + tempWidth/2 + 'px)');
+        
+       }
+       
+       if ($(".layer-back-img").height() > window.innerHeight+76) {
+        $('.layer-back-img').css("margin-top", -($(".layer-back-img").height()-window.innerHeight+76)+"px");
+       }
+     });
+      
+      
+      var didResize = false;
+      $(window).resize(function() {
+        didResize = true;
+      });
+      
+      setInterval(function() {
+        if (didResize) {
+          $('.parallax').height($(".layer-back-img").height());
+          $(".layer-back-img").css('transform', 'translateX(-' + 0 + 'px)');
+          var tempWidth = parseFloat($(".layer-back-img").width())-parseFloat($(window).width());
+          if (tempWidth >= 0) {
+             $(".layer-back-img").css('transform', 'translateX(-' + tempWidth/2 + 'px)');
+          }   
+          didResize = false;
+          if ($(".layer-back-img").height() > window.innerHeight+76) {
+            $('.layer-back-img').css("margin-top", -($(".layer-back-img").height()-window.innerHeight+76)+"px");
+           }
+          else {
+            $('.layer-back-img').css("margin-top", 0);
+          }
+        }
+      }, 250);
+  </script>
+    
+    <script>
+    var tween = TweenMax.to("#background", 0.5, {top:"-420px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 400, triggerHook: 'onLeave'})
+						.setTween(tween)
+						.addTo(controller);
+    
+    var tween2 = TweenMax.to("#sun", 0.5, {top:"-280px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 400, triggerHook: 'onLeave'})
+						.setTween(tween2)
+						.addTo(controller);
+     
+    var tween3 = TweenMax.to("#mountain", 0.5, {top:"-400px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 400, triggerHook: 'onLeave'})
+						.setTween(tween3)
+						.addTo(controller);
+    
+      
+    var tween4 = TweenMax.to(".cloud", 0.5, {top:"-150px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 400, triggerHook: 'onLeave'})
+						.setTween(tween4)
+						.addTo(controller);
+      
+    var tween5 = TweenMax.to(".branches", 0.5, {top:"-400px"});
+    var sceneBackground = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 400, triggerHook: 'onLeave'})
+						.setTween(tween5)
+						.addTo(controller);
+    
+    </script>
+  </body>
+  
+  <style>
+    body, html {
+      width: 99.5%;
+      position: relative;
+      height: 200%;
+      background: rgb(51,16,37);
+    }
+    .parallax {
+      perspective: 1px;
+      z-index: 2;
+    }
+    .layer-back{
+      width: 100%;
+      transition: 1;
+      position: relative;
+      right: 0;
+      left: 0;
+      float: left;
+      background: rgb(51,16,37);
+    }
+    .layer-back-img {
+      min-height: 600px;
+      min-height: 100vh;
+      transition: 0.1s;
+      max-height: 800px;
+      min-width: 100%;
+      width: auto;
+      margin-top: -76px;
+      position: absolute;
+    }
+    #trigger {
+      position: absolute;
+      top: 5px;
+    }
+    .middle-content {
+      height: 2000px;
+      width: 100%;
+      position: relative;
+      float: left;
+    }
+    @media screen and (max-width: 1700px) {
+      
+    }
+  </style>
+</html>
